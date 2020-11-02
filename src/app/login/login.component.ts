@@ -20,7 +20,7 @@ addHero(correo: string, pass: string) {
 
   return this.restApi.getLogin(correo, pass).subscribe((data: {}) => {
     console.log(data);
-    if(data[0].id == 0){ alert('fail');}else{this.router.navigate(['/first-component'])}
+    if(data[0].id == 0){ alert('fail');}else{this.router.navigate(['/first'])}
     //this.Login = data;
   })
 }

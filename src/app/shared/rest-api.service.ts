@@ -21,7 +21,7 @@ export class RestApiService {
     })
   }
 
-
+/*
   getEmployees(): Observable<Employee> {
    return this.http.get<Employee>(this.apiURL + '/service/empleado')
    .pipe(
@@ -29,7 +29,7 @@ export class RestApiService {
      catchError(this.handleError)
    )
  }
-
+*/
 
  getLogin(correo, pass): Observable<Login> {
   return this.http.get<Login>(this.apiURL + '/login/?correo='+correo+'&contra='+pass)
