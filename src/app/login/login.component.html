@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+<br>
+<br>
+<br>
+<br>
+<div class="col-sm-4">
+  </div>
+     <div class="col-sm-4">
+
+         <div class="form-group">
+
+         <label>
+           First Name:
+           <input #first class="form-control" type="text" >
+         </label>
+        </div>
+        <div class="form-group">
+
+         <label>
+           Last Name:
+           <input #second type="password" class="form-control" >
+         </label>
+        </div>
+       <!-- <button type="submit" class="btn btn-primary">Submit</button>
+       <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>-->
+        <button (click)="addHero(first.value, second.value)" class="btn btn-primary" >Login</button>
+
+
+  </div>
+  <div class="col-sm-4">
+    </div>
+</div>
+</div>
