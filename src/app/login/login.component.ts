@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+
 import { RestApiService } from "../shared/rest-api.service";
 import {Router} from "@angular/router"
-
+import { enviroment } from '../shared/enviroment';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,10 +11,11 @@ import {Router} from "@angular/router"
 export class LoginComponent  {
 
       Login: any = [];
+      env = enviroment;
 
       constructor(
         public restApi: RestApiService,private router: Router
-      ) { }
+      ) { console.log(this.env.usersession);}
 
 addHero(correo: string, pass: string) {
   console.log(pass);

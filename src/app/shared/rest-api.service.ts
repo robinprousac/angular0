@@ -11,7 +11,9 @@ import { retry, catchError } from 'rxjs/operators';
 export class RestApiService {
 
 
-  apiURL = 'http://192.168.1.30:3000';
+  //apiURL = 'http://192.168.1.30:3000';
+//  apiURL = 'http://35.188.72.200/web/index.php/service';
+apiURL = 'http://192.168.1.18:3000';
 
   constructor(private http: HttpClient) { }
 
@@ -21,20 +23,29 @@ export class RestApiService {
     })
   }
 
-/*
+
   getEmployees(): Observable<Employee> {
-   return this.http.get<Employee>(this.apiURL + '/service/empleado')
+   return this.http.get<Employee>(this.apiURL + '/empleado')
    .pipe(
      retry(1),
      catchError(this.handleError)
    )
  }
-*/
+
 
  getLogin(correo, pass): Observable<Login> {
   return this.http.get<Login>(this.apiURL + '/login/?correo='+correo+'&contra='+pass)
   .pipe(
     retry(1),
+    catchError(this.handleError)
+  )
+}
+
+
+createEmployee(employee): Observable<Employee> {
+    return this.http.post<Employee>(this.apiURL + '/factura/?idpersona=23&fecha=29/10/2020', JSON.stringify(employee), this.httpOptions)
+  .pipe(
+  //  retry(1),
     catchError(this.handleError)
   )
 }
