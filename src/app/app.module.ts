@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { SecondComponent } from './second/second.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { SocketioService} from './socketio.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,8 +21,9 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
      HttpClientModule,
+     FormsModule
   ],
-  providers: [],
+  providers: [SocketioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
